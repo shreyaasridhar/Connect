@@ -10,7 +10,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
-import MapContainer from "./components/MapView";
+import MapDashboard from "./components/MapDashboard";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <div>
         <Switch>
           <Route path="/map">
-            <MapContainer />
+            <MapDashboard />
           </Route>
           <Route path="/login">
             <Login />
