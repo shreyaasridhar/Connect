@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Profile from "./components/Profile";
 
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup />
+          </Route>
+          <Route path="/profile">
+            <Profile />
           </Route>
           <Redirect from="/" to="/login" />
         </Switch>
