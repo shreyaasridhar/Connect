@@ -4,19 +4,22 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from "react-router-dom";
-import Login from './components/Login';
-import Signup from './components/Signup';
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
-
+import MapContainer from "./components/MapView";
 
 function App() {
   return (
     <Router>
       <div>
         <Switch>
+          <Route path="/map">
+            <MapContainer />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
