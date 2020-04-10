@@ -7,20 +7,41 @@ import RequestList from "../RequestList";
 
 const { TabPane } = Tabs;
 
-const operations = <Button type="primary" shape="round" icon={<PlusOutlined />}>Add Requests</Button>;
+const operations = <Button type="primary" shape="round" icon={<PlusOutlined />} style={{ marginRight: '20px' }}>Add Requests</Button>;
 
-const data = [
+const pendingData = [
     {
         id: "RQ1001",
         description: "Plumbing work",
-        postedOn: "Apr 11, 2020 5:00 PM"
+        postedOn: "Apr 11, 2020 5:00 PM",
+        status: "InProgress",
+        requestedBy: "Venkat Raman"
     },
     {
         id: "RQ1012",
         description: "Electrical wiring issue",
-        postedOn: "Apr 11, 2020 5:00 PM"
+        postedOn: "Apr 11, 2020 5:00 PM",
+        status: "InProgress",
+        requestedBy: "Venkat Raman"
     }
-  ];
+];
+
+const completedData = [
+    {
+        id: "RQ0095",
+        description: "Plumbing work",
+        postedOn: "Apr 10, 2020 5:00 PM",
+        status: "Completed",
+        requestedBy: "Venkat Raman"
+    },
+    {
+        id: "RQ0092",
+        description: "Broken furniture issue",
+        postedOn: "Apr 10, 2020 5:00 PM",
+        status: "Completed",
+        requestedBy: "Venkat Raman"
+    }
+];
 
 class Dashboard extends React.Component {
 
@@ -65,11 +86,12 @@ class Dashboard extends React.Component {
                 >
                     <TabPane tab="Pending Requests" key="1">
                         <Card title="Pending Requests" style={{ width: '70%', marginLeft: '15%', marginTop: '50px' }}>
-                            <RequestList data={data} />
+                            <RequestList data={pendingData} />
                         </Card>
                     </TabPane>
                     <TabPane tab="Completed Requests" key="2">
                         <Card title="Completed Requests" style={{ width: '70%', marginLeft: '15%', marginTop: '50px' }}>
+                            <RequestList data={completedData} />
                         </Card>
                     </TabPane>
                 </Tabs>
