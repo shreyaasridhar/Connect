@@ -1,13 +1,12 @@
 import React from "react";
-import { Button, Card, Tabs } from 'antd';
+import { Button, Card, Tabs, Modal } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import NavBar from '../NavBar';
 import RequestList from "../RequestList";
+import NewRequest from "../NewRequest";
 
 
 const { TabPane } = Tabs;
-
-const operations = <Button type="primary" shape="round" icon={<PlusOutlined />} style={{ marginRight: '20px' }}>Add Requests</Button>;
 
 const pendingData = [
     {
@@ -50,8 +49,28 @@ class Dashboard extends React.Component {
         this.state = {
             editEnabled: false,
             name: "Venkat Raman",
-            email: "venkat@gmail.com"
+            email: "venkat@gmail.com",
+            isOpen: false
         };
+    }
+
+    showModal = () => {
+        this.setState({
+            isOpen: true
+        });
+    }
+
+    handleOk = (data) => {
+        console.log(data);
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+
+    handleCancel = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
     }
 
     onEditChange = () => {
@@ -75,13 +94,14 @@ class Dashboard extends React.Component {
     }
 
     render() {
+        const { isOpen } = this.state;
         return (
             <React.Fragment>
                 <NavBar loggedIn />
                 <Tabs
                     defaultActiveKey="1"
                     type="card" size="large"
-                    tabBarExtraContent={operations}
+                    tabBarExtraContent={<Button type="primary" shape="round" icon={<PlusOutlined />} style={{ marginRight: '20px' }} onClick={this.showModal}>Add Requests</Button>}
                     style={{ marginTop: '50px' }}
                 >
                     <TabPane tab="Pending Requests" key="1">
@@ -95,6 +115,15 @@ class Dashboard extends React.Component {
                         </Card>
                     </TabPane>
                 </Tabs>
+                <Modal
+                    destroyOnClose={true}
+                    title="New Request"
+                    visible={isOpen}
+                    onOk={this.handleOk}
+                    onCancel={this.handleCancel}
+                >
+                    <NewRequest/>
+                </Modal>
             </React.Fragment>
         );
     }
