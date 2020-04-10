@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Form, Input, Button, DatePicker } from 'antd';
+import { Form, Input, Radio, DatePicker } from 'antd';
 
 const layout = {
     labelCol: { span: 8 },
@@ -66,6 +66,17 @@ class NewRequest extends React.Component {
                             onChange={this.onChange}
                             onOk={this.onOk}
                         />
+                    </Form.Item>
+                    
+                    <Form.Item
+                        label="Exposure to Risk"
+                        name="exposureToRisk"
+                        rules={[{ required: true, message: 'Please enter your exposure information!' }]}
+                    >
+                            <Radio.Group name="radiogroup" className="Radiosize" defaultValue={2}>
+                                <Radio value={1}>Yes</Radio>
+                                <Radio value={2}>No</Radio>
+                            </Radio.Group>
                     </Form.Item>
                 </Form>
             </React.Fragment>

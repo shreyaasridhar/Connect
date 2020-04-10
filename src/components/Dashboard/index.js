@@ -14,14 +14,16 @@ const pendingData = [
         description: "Plumbing work",
         postedOn: "Apr 11, 2020 5:00 PM",
         status: "InProgress",
-        requestedBy: "Venkat Raman"
+        requestedBy: "Venkat Raman",
+        exposureToRisk: false
     },
     {
         id: "RQ1012",
         description: "Electrical wiring issue",
         postedOn: "Apr 11, 2020 5:00 PM",
         status: "InProgress",
-        requestedBy: "Venkat Raman"
+        requestedBy: "Venkat Raman",
+        exposureToRisk: true
     }
 ];
 
@@ -31,14 +33,16 @@ const completedData = [
         description: "Plumbing work",
         postedOn: "Apr 10, 2020 5:00 PM",
         status: "Completed",
-        requestedBy: "Venkat Raman"
+        requestedBy: "Venkat Raman",
+        exposureToRisk: false
     },
     {
         id: "RQ0092",
         description: "Broken furniture issue",
         postedOn: "Apr 10, 2020 5:00 PM",
         status: "Completed",
-        requestedBy: "Venkat Raman"
+        requestedBy: "Venkat Raman",
+        exposureToRisk: false
     }
 ];
 

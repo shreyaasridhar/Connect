@@ -11,7 +11,7 @@ class RequestDetail extends React.Component {
             <React.Fragment>
                 <PageHeader
                     title={data.id}
-                    tags={<Tag color="blue">{data.status}</Tag>}
+                    tags={[<Tag color={data.status === 'Completed'? 'green':'blue'}>{data.status}</Tag>, <Tag color={data.exposureToRisk === true? 'red':'green'}>{data.exposureToRisk === true? 'Exposed':'Safe'}</Tag>]}
                     >
                     <Title>{data.description}</Title>
                     <Paragraph>Requested By: {data.requestedBy}</Paragraph>
