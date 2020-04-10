@@ -3,9 +3,11 @@ import "./App.css";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import Login from './components/Login';
+import Signup from './components/Signup';
 
 
 function App() {
@@ -16,6 +18,10 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+          <Redirect from="/" to="/login" />
         </Switch>
       </div>
     </Router>

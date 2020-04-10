@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, Button, Card, Typography } from 'antd';
+import { Form, Input, Button, Card, Typography, Radio } from 'antd';
 import NavBar from '../NavBar';
 import { Link } from "react-router-dom";
 
@@ -18,7 +18,7 @@ const tailTextLayout = {
 
 const { Text } = Typography;
 
-class Login extends React.Component {
+class Signup extends React.Component {
 
     onFinish = values => {
         console.log('Success:', values);
@@ -32,7 +32,7 @@ class Login extends React.Component {
         return (
             <React.Fragment>
                 <NavBar />
-                <Card title="Login" style={{ width: '50%', marginLeft: '25%', marginTop: '150px' }}>
+                <Card title="Sign Up" style={{ width: '50%', marginLeft: '25%', marginTop: '150px' }}>
                     <Form
                         {...layout}
                         name="basic"
@@ -41,11 +41,19 @@ class Login extends React.Component {
                         onFinishFailed={this.onFinishFailed}
                     >
                         <Form.Item
+                            label="Name"
+                            name="name"
+                            rules={[{ required: true, message: 'Please input your name!' }]}
+                        >
+                            <Input placeholder="Enter your name" />
+                        </Form.Item>
+
+                        <Form.Item
                             label="Email"
                             name="email"
                             rules={[{ required: true, message: 'Please input your email!' }]}
                         >
-                            <Input />
+                            <Input placeholder="Enter your email id" />
                         </Form.Item>
 
                         <Form.Item
@@ -53,7 +61,26 @@ class Login extends React.Component {
                             name="password"
                             rules={[{ required: true, message: 'Please input your password!' }]}
                         >
-                            <Input.Password />
+                            <Input.Password placeholder="Enter your password" />
+                        </Form.Item>
+
+                        <Form.Item
+                            label="Confirm Password"
+                            name="confirm-password"
+                            rules={[{ required: true, message: 'Please confirm your password!' }]}
+                        >
+                            <Input.Password placeholder="Confirm your password" />
+                        </Form.Item>
+
+                        <Form.Item
+                            label="Profile"
+                            name="profile"
+                            rules={[{ required: true, message: 'Please confirm your profile preference!' }]}
+                        >
+                            <Radio.Group name="radiogroup" className="Radiosize" defaultValue={2}>
+                                <Radio value={1}>I can help!</Radio>
+                                <Radio value={2}>I need help</Radio>
+                            </Radio.Group>
                         </Form.Item>
 
                         <Form.Item {...tailLayout}>
@@ -64,10 +91,11 @@ class Login extends React.Component {
 
 
                         <Form.Item {...tailTextLayout}>
-                            <Link to="/signup">
-                                <Text underline>Don't have an account? Signup</Text>
+                            <Link to="/login">
+                                <Text underline>Have an account? Log in</Text>
                             </Link>
                         </Form.Item>
+
                     </Form>
                 </Card>
             </React.Fragment>
@@ -75,4 +103,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default Signup;
