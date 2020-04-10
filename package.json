@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.1.1",
     "dayjs": "^1.8.23",
+    "google-maps-react": "^2.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-google-login": "^5.1.3",
