@@ -9,6 +9,7 @@ import {
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from "./components/Profile";
+import Dashboard from "./components/Dashboard";
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
           <Redirect from="/" to="/login" />
         </Switch>

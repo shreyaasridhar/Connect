@@ -12,11 +12,7 @@ const tailLayout = {
     wrapperCol: { offset: 12, span: 16 },
 };
 
-const tailTextLayout = {
-    wrapperCol: { offset: 10, span: 16 },
-};
-
-const { Title, Text, Paragraph } = Typography;
+const { Title, Paragraph } = Typography;
 
 class Profile extends React.Component {
 

@@ -15,7 +15,10 @@ class NavBar extends React.Component {
             <Header className="header">
                 <Menu theme="dark" mode="horizontal">
                     <Menu.Item key="0" >Connect</Menu.Item>
-                    {loggedIn && <Menu.Item key="1">Dashboard</Menu.Item>}
+                    {loggedIn && 
+                        <Menu.Item key="1">
+                            <Link to="/dashboard">Dashboard</Link>
+                        </Menu.Item>}
                     {loggedIn && <Menu.Item key="2">Map View</Menu.Item>}
                     {loggedIn && 
                         <Link to="/profile">
