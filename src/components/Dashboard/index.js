@@ -15,7 +15,9 @@ const pendingData = [
         postedOn: "Apr 11, 2020 5:00 PM",
         status: "InProgress",
         requestedBy: "Venkat Raman",
-        exposureToRisk: false
+        exposureToRisk: false,
+        fromTime: "Apr 12, 2020 10:00 AM",
+        toTime: "Apr 12, 2020 12:00 PM"
     },
     {
         id: "RQ1012",
@@ -23,7 +25,9 @@ const pendingData = [
         postedOn: "Apr 11, 2020 5:00 PM",
         status: "InProgress",
         requestedBy: "Venkat Raman",
-        exposureToRisk: true
+        exposureToRisk: true,
+        fromTime: "Apr 12, 2020 1:00 PM",
+        toTime: "Apr 12, 2020 2:00 PM"
     }
 ];
 
@@ -34,7 +38,9 @@ const completedData = [
         postedOn: "Apr 10, 2020 5:00 PM",
         status: "Completed",
         requestedBy: "Venkat Raman",
-        exposureToRisk: false
+        exposureToRisk: false,
+        fromTime: "Apr 11, 2020 10:00 AM",
+        toTime: "Apr 11, 2020 12:00 PM"
     },
     {
         id: "RQ0092",
@@ -42,7 +48,9 @@ const completedData = [
         postedOn: "Apr 10, 2020 5:00 PM",
         status: "Completed",
         requestedBy: "Venkat Raman",
-        exposureToRisk: false
+        exposureToRisk: false,
+        fromTime: "Apr 11, 2020 1:00 PM",
+        toTime: "Apr 11, 2020 2:00 PM"
     }
 ];
 

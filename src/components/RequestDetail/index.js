@@ -11,12 +11,13 @@ class RequestDetail extends React.Component {
             <React.Fragment>
                 <PageHeader
                     title={data.id}
-                    tags={[<Tag color={data.status === 'Completed'? 'green':'blue'}>{data.status}</Tag>, <Tag color={data.exposureToRisk === true? 'red':'green'}>{data.exposureToRisk === true? 'Exposed':'Safe'}</Tag>]}
-                    >
+                    tags={[<Tag color={data.status === 'Completed' ? 'green' : 'blue'}>{data.status}</Tag>, <Tag color={data.exposureToRisk === true ? 'red' : 'green'}>{data.exposureToRisk === true ? 'Exposed' : 'Safe'}</Tag>]}
+                >
                     <Title>{data.description}</Title>
                     <Paragraph>Requested By: {data.requestedBy}</Paragraph>
-                    <Paragraph>Requested postedOn: {data.requestedBy}</Paragraph>
-                    </PageHeader>
+                    <Paragraph>Requested Posted On: {data.postedOn}</Paragraph>
+                    <Paragraph>Requested Time Slot: {data.fromTime} - {data.toTime}</Paragraph>
+                </PageHeader>
             </React.Fragment>
         );
     }
