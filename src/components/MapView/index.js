@@ -5,6 +5,7 @@ const mapStyles = {
   width: "100%",
   height: "100%",
 };
+
 export class MapContainer extends Component {
   state = {
     showingInfoWindow: false, //Hides or the shows the infoWindow
@@ -38,7 +39,18 @@ export class MapContainer extends Component {
             lng: -118.25326,
           }}
         >
-          <Marker onClick={this.onMarkerClick} name={"Pershing Sqaure"} />
+          <Marker
+            onClick={this.onMarkerClick}
+            name={"Bert Jones, RATING: 4.5"}
+          />
+          <Marker
+            onClick={this.onMarkerClick}
+            name={"Jose Santos, RATING: 4.9"}
+            position={{
+              lat: 34.044614,
+              lng: -118.264644,
+            }}
+          />
           <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
