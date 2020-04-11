@@ -51,9 +51,15 @@ class MapDashboard extends React.Component {
         <NavBar loggedIn />
         <Row>
           <Col span={12}>
-            <Card style={{ marginLeft: "15%", marginTop: "50px" }}>
-              <MapContainer></MapContainer>
-            </Card>
+            <div
+              style={{
+                height: "500px",
+                marginLeft: "15%",
+                marginTop: "50px",
+              }}
+            >
+              {this.props.MapContainer}
+            </div>
           </Col>
           <Col span={12}>
             <Card

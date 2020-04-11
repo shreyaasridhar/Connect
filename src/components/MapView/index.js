@@ -28,30 +28,32 @@ export class MapContainer extends Component {
   };
   render() {
     return (
-      <Map
-        google={this.props.google}
-        zoom={14}
-        style={mapStyles}
-        initialCenter={{
-          lat: 34.04806,
-          lng: -118.25326,
-        }}
-      >
-        <Marker onClick={this.onMarkerClick} name={"Pershing Sqaure"} />
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
+      <div>
+        <Map
+          google={this.props.google}
+          zoom={14}
+          style={mapStyles}
+          initialCenter={{
+            lat: 34.04806,
+            lng: -118.25326,
+          }}
         >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-          </div>
-        </InfoWindow>
-      </Map>
+          <Marker onClick={this.onMarkerClick} name={"Pershing Sqaure"} />
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onClose}
+          >
+            <div>
+              <h4>{this.state.selectedPlace.name}</h4>
+            </div>
+          </InfoWindow>
+        </Map>
+      </div>
     );
   }
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyDwgYQmUUifvOX1fxUb2eGuWFty6PA88rQ",
+  apiKey: "AIzaSyCGqGptNUSVgZ5ZokyKaxWrVEkE5oGN0xo",
 })(MapContainer);

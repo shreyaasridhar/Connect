@@ -11,6 +11,7 @@ import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
 import MapDashboard from "./components/MapDashboard";
+import MapContainer from "./components/MapView";
 
 function App() {
   return (
@@ -18,7 +19,10 @@ function App() {
       <div>
         <Switch>
           <Route path="/map">
-            <MapDashboard />
+            <MapDashboard MapContainer={<MapContainer />} />
+          </Route>
+          <Route path="/mapview">
+            <MapContainer />
           </Route>
           <Route path="/login">
             <Login />
