@@ -8,15 +8,15 @@ import { MapContainer } from "../MapView";
 
 const data = [
   {
-    id: "RQ1001",
-    description: "Request for Smoke Detector help",
+    id: "Jose Santos",
+    description: "Carpentery, Plumbing",
     lat: "34",
     long: "-110",
     postedOn: "Apr 11, 2020 5:00 PM",
   },
   {
-    id: "RQ1012",
-    description: "Request Electrical wiring issue",
+    id: "Bert Jones",
+    description: "Electrical wiring",
     lat: "34",
     long: "-118",
     postedOn: "Apr 11, 2020 5:00 PM",
@@ -63,7 +63,7 @@ class MapDashboard extends React.Component {
           </Col>
           <Col span={12}>
             <Card
-              title="Requests"
+              title="Available to help"
               style={{ width: "70%", marginLeft: "15%", marginTop: "50px" }}
             >
               <List
