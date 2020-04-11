@@ -58,8 +58,10 @@ class Login extends React.Component {
 
                         <Form.Item {...tailLayout}>
                             <Button type="primary" htmlType="submit">
-                                Submit
-                        </Button>
+                                <Link to="/dashboard">
+                                    Submit
+                                </Link>
+                            </Button>
                         </Form.Item>
 
 
